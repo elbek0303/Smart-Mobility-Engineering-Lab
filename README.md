@@ -31,3 +31,30 @@ turtlesim draw_square
 turtlesim mimic
 turtlesim turtle_teleop_key
 turtlesim turtlesim_node
+
+
+######Starting and Using
+elbek@elbek-virtual-machine:~$  source /opt/ros/foxy/setup.sh
+OS_DISTRO was set to 'noetic' before. Please make sure that the environment does not mix paths from different distributions.
+elbek@elbek-virtual-machine:~$  ros2 run turtlesim turtlesim_node
+[INFO] [1663641213.835052574] [turtlesim]: Starting turtlesim with node name /turtlesim
+[INFO] [1663641213.843843646] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+[INFO] [1663641652.042988255] [turtlesim]: Spawning turtle [turtle2] at x=[1.000000], y=[1.000000], theta=[0.000000]
+[WARN] [1663641958.871626326] [turtlesim]: Oh no! I hit the wall! (Clamping from [x=3.941882, y=11.099703])
+[WARN] [1663641958.886837813] [turtlesim]: Oh no! I hit the wall! (Clamping from [x=3.933865, y=11.119869])
+[WARN] [1663641958.903235761] [turtlesim]: Oh no! I hit the wall! (Clamping from [x=3.925849, y=11.119869])
+[WARN] [1663641958.919503554] [turtlesim]: Oh no! I hit the wall! (Clamping from [x=3.917833, y=11.119869])
+[WARN] [1663641958.935489939] [turtlesim]: Oh no! I hit the wall! (Clamping from [x=3.909817, y=11.119869])
+[WARN] [1663641958.950991549] [turtlesim]: Oh no! I hit the wall! (Clamping from [x=3.901801, y=11.11.......
+....skipped.........
+
+elbek@elbek-virtual-machine:~$ source /opt/ros/foxy/setup.sh
+ROS_DISTRO was set to 'noetic' before. Please make sure that the environment does not mix paths from different distributions.
+elbek@elbek-virtual-machine:~$ ros2 run turtlesim turtle_teleop_key
+Reading from keyboard
+---------------------------
+Use arrow keys to move the turtle.
+Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
+'Q' to quit.
+
+#Nodes,services, topics, and actions
