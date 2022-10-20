@@ -3,7 +3,7 @@ This repository for Smart Mobility Engineering Lab class
 
 ##### WEEK 4 ########
 1. Installing Turtlesim
-
+```
 elbek@elbek-virtual-machine:~$ sudo apt update
 [sudo] password for elbek: 
 Hit:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
@@ -31,9 +31,10 @@ turtlesim draw_square
 turtlesim mimic
 turtlesim turtle_teleop_key
 turtlesim turtlesim_node
-
+```
 
 ######Starting and Using
+```
 elbek@elbek-virtual-machine:~$  source /opt/ros/foxy/setup.sh
 OS_DISTRO was set to 'noetic' before. Please make sure that the environment does not mix paths from different distributions.
 elbek@elbek-virtual-machine:~$  ros2 run turtlesim turtlesim_node
@@ -56,8 +57,10 @@ Reading from keyboard
 Use arrow keys to move the turtle.
 Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
 'Q' to quit.
+```
 
 #Nodes,services, topics, and actions
+```
 elbek@elbek-virtual-machine:~$ ros2 node list
 /teleop_turtle
 elbek@elbek-virtual-machine:~$ ros2 topic list
@@ -83,9 +86,9 @@ Reading from keyboard
 Use arrow keys to move the turtle.
 Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
 'Q' to quit.
-
+```
 ###WEEK 5   ACTIVITY #############
-
+```
 elbek@elbek-virtual-machine:~$ mkdir ros2_ws
 elbek@elbek-virtual-machine:~$ cd ros2ws/
 elbek@elbek-virtual-machine:~$/ros2_ws$ ls
@@ -126,9 +129,9 @@ elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 run my_package my_node
 hello world my_package package
 elbek@elbek-virtual-machine:~$ ros2_ws/src/my_package$ ls
 CMakeLists.txt  include  package.xml  src
-
+```
 %%% update CMakeLists.txt
-
+```
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
@@ -149,9 +152,9 @@ CMakeLists.txt  include  package.xml  src
     <build_type>ament_python</build_type>
   </export>
 </package>
-
+```
 PUBLISHER AND SUBSCRIBER IN PYTHON
-
+```
 
 elbek@elbek-virtual-machine:~$ ros2_ws/src$ ros2 pkg create --build-type ament_python py_pubsub
 going to create a new package
@@ -193,17 +196,18 @@ publisher_member_fun 100%[===================>]   1.54K  --.-KB/s    in 0.005s
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_pubsub/py_pubsub$ ls
 __init__.py  publisher_member_function.py
 elbek@elbek-virtual-machine:~$ros2_ws/src/py_pubsub/py_pubsub$ code publisher_member_function.py 
-
+```
 %%%%%% Examine the code and Add dependencies
+```
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_pubsub$ ls
 package.xml  py_pubsub  resource  setup.cfg  setup.py  test
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_pubsub$ code package.xml 
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_pubsub$ code setup.py 
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_pubsub$ code setup.cfg
 
-
+```
 WRITING SUBSCRIBTION NODE
-
+```
 
 elbek@elbek-virtual-machine:~$/ros2_ws/src/py_pubsub/py_pubsub$ wget https://raw.githubusercontent.com/ros2/examples/foxy/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py
 --2022-09-28 14:15:56--  https://raw.githubusercontent.com/ros2/examples/foxy/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py
@@ -241,9 +245,10 @@ elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 run py_pubsub listener
 [INFO] [1664344795.052560275] [minimal_subscriber]: I heard: "Hello World: 25"
 [INFO] [1664344795.552365233] [minimal_subscriber]: I heard: "Hello World: 26"
 [INFO] [1664344796.052530783] [minimal_subscriber]: I heard: ......
-
+```
 #### 3. Writing a simple service and client using Python
 ##### Creating a package
+```
 elbek@elbek-virtual-machine:~$ ros2_ws/src$ ros2 pkg create --build-type ament_python py_srvcli --dependencies rclpy example_interfaces
 going to create a new package
 package name: py_srvcli
@@ -283,10 +288,10 @@ maintainer_email='elbekjonyusupov0303@gmail.com',
 description='Python client server tutorial',
 license='Apache License 2.0',
 
-
+```
 Write the service node, client node and add entry points
 
-
+```
 elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli$ code package.xml
 ...opens Visual studio
 elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli$ 
@@ -298,9 +303,9 @@ elbek@elbek-virtual-machine:~$ ros2_ws/src/py_srvcli/py_srvcli$ cd ..
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_srvcli$ code setup.py
 elbek@elbek-virtual-machine:~$ ros2_ws/src/py_srvcli$ 
 
-
+```
 Building and running
-
+```
 elbek@elbek-virtual-machine:~$ ros2_ws$ rosdep install -i --from-path src --rosdistro foxy -y
 WARNING: given --rosdistro foxy but ROS_DISTRO is "noetic". Ignoring environment.
 #All required rosdeps installed successfully
@@ -318,7 +323,9 @@ elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 run py_srvcli service
 [INFO] [1665454325.211773313] [minimal_service]: Incoming request
 a: 4 b: 6
 ..
+```
 %%% Start the client node,
+```
 elbek@elbek-virtual-machine:~$ ros2_ws$ . install/setup.bash
 elbek@elbek-virtual-machine:~$ ros source /opt/ros/foxy/setup.sh
 ROS_DISTRO was set to 'noetic' before. Please make sure that the environment does not mix paths from different distributions.
@@ -326,9 +333,10 @@ elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 run py_srvcli client 4 6
 [INFO] [1665454325.250957140] [minimal_client_async]: Result of add_two_ints: for 4 + 6 = 10
 elbek@elbek-virtual-machine:~$ ros2_ws$ 
 
-                     
+  ```                   
                      4. Creating custom msg and srv files
 Creating a package and custom defitions (msg,srv, CMakeLists.txt and package.xml)
+```
 
                      
                      
@@ -350,114 +358,114 @@ creating folder ./tutorial_interfaces
 creating ./tutorial_interfaces/package.xml
 creating source and include folder
 creating folder .... %%skipped
-Muhammadyusuf@ubuntu:~/ros2_ws/src$ cd tutorial_interfaces/
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ mkdir msg
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ mkdir srv
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ cd msg/
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/msg$ code Num.msg
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/msg$ ls
+elbek@elbek-virtual-machine:~$ros2_ws/src$ cd tutorial_interfaces/
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ mkdir msg
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ mkdir srv
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ cd msg/
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/msg$ code Num.msg
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/msg$ ls
 Num.msg
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/msg$ code Sphere.msg
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/msg$ cd ..
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ cd srv
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/srv$ code AddThreeInts.srv
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/srv$ ls
+elbek@elbek-virtual-machine:~$/ros2_ws/src/tutorial_interfaces/msg$ code Sphere.msg
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/msg$ cd ..
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ cd srv
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/srv$ code AddThreeInts.srv
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/srv$ ls
 AddThreeInts.srv
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/srv$ 
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/srv$ 
 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces/srv$ cd ..
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ ls
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces/srv$ cd ..
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ ls
 CMakeLists.txt  include  msg  package.xml  src  srv
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ code CMakeLists.txt
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ ls
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ code CMakeLists.txt
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ ls
 CMakeLists.txt  include  msg  package.xml  src  srv
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ code package.xml 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/tutorial_interfaces$ cd ..
-Muhammadyusuf@ubuntu:~/ros2_ws/src$
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ code package.xml 
+elbek@elbek-virtual-machine:~$ros2_ws/src/tutorial_interfaces$ cd ..
+elbek@elbek-virtual-machine:~$~/ros2_ws/src$
 
 Build the tutorial_interfaces package and Confirm msg and srv creation
 
-Muhammadyusuf@ubuntu:~/ros2_ws$ colcon build --packages-select tutorial_interfaces
+elbek@elbek-virtual-machine:~$/ros2_ws$ colcon build --packages-select tutorial_interfaces
 Starting >>> tutorial_interfaces
 Finished <<< tutorial_interfaces [25.5s]                       
 
 Summary: 1 package finished [26.2s]
-Muhammadyusuf@ubuntu:~/ros2_ws$ 
+elbek@elbek-virtual-machine:~$ros2_ws$ 
 
-Muhammadyusuf@ubuntu:~/ros2_ws$ . install/setup.bash
+elbek@elbek-virtual-machine:~$ros2_ws$ . install/setup.bash
 ROS_DISTRO was set to 'noetic' before. Please make sure that the environment does not mix paths from different distributions.
-Muhammadyusuf@ubuntu:~/ros2_ws$ source /opt/ros/foxy/setup.bash
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 interface show tutorial_interfaces/msg/Num
+elbek@elbek-virtual-machine:~$ros2_ws$ source /opt/ros/foxy/setup.bash
+elbek@elbek-virtual-machine:~$ros2_ws$ ros2 interface show tutorial_interfaces/msg/Num
 int64 num
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 interface show tutorial_interfaces/msg/Sphere
+elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 interface show tutorial_interfaces/msg/Sphere
 geometry_msgs/Point center
 float64 radius
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 interface show tutorial_interfaces/srv/AddThreeInts
+elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 interface show tutorial_interfaces/srv/AddThreeInts
 int64 a
 int64 b
 int64 c
 ---
 int64 sum
-Muhammadyusuf@ubuntu:~/ros2_ws$ 
+elbek@elbek-virtual-machine:~$ ros2_ws$ 
 
 testing Num.msg with pub/sub
 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_pubsub$ cd py_pubsub/
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_pubsub/py_pubsub$ ls
+elbek@elbek-virtual-machine:~$ ros2_ws/src/py_pubsub$ cd py_pubsub/
+elbek@elbek-virtual-machine:~$/ros2_ws/src/py_pubsub/py_pubsub$ ls
 __init__.py  publisher_member_function.py  subscriber_member_function.py
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_pubsub/py_pubsub$ code publisher_member_function.py 
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_pubsub/py_pubsub$ code publisher_member_function.py 
 ...%%%% UPDATE SOME PARTS
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_pubsub/py_pubsub$ code subscriber_member_function.py 
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_pubsub/py_pubsub$ code subscriber_member_function.py 
 ....%%%%% UPDATE SOME PARTS
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_pubsub/py_pubsub$ 
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_pubsub/py_pubsub$ 
 
-Muhammadyusuf@ubuntu:~/ros2_ws$ colcon build --packages-select py_pubsub
+elbek@elbek-virtual-machine:~$ ros2_ws$ colcon build --packages-select py_pubsub
 Starting >>> py_pubsub
 Finished <<< py_pubsub [2.56s]          
 
 Summary: 1 package finished [3.22s]
-Muhammadyusuf@ubuntu:~/ros2_ws$
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 run py_pubsub talker
+elbek@elbek-virtual-machine:~$/ros2_ws$
+elbek@elbek-virtual-machine:~$/ros2_ws$ ros2 run py_pubsub talker
 [INFO] [1665459164.361655668] [minimal_publisher]: Publishing: "0"
 [INFO] [1665459166.298111030] [minimal_publisher]: Publishing: "4"
 [INFO] [1665459166.800637375] [minimal_publisher]...skipped
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 run py_pubsub listener
+elbek@elbek-virtual-machine:~$ros2_ws$ ros2 run py_pubsub listener
 [INFO] [1665459416.413502702] [minimal_subscriber]: I heard: "15"
 [INFO] [1665459417.842113339] [minimal_subscriber]: I heard: "18"
 [INFO] [1665459418.339504899] [minimal_subscriber]:...skipped
 
 Testing AddThreeINts.srv with service and client
 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli$ cd py_srvcli/
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli/py_srvcli$ ls
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli$ cd py_srvcli/
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli/py_srvcli$ ls
 client_member_function.py  __init__.py  service_member_function.py
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli/py_srvcli$ code service_member_function.py 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli/py_srvcli$ code client_member_function.py 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli/py_srvcli$
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli$ code package.xml 
-Muhammadyusuf@ubuntu:~/ros2_ws/src/py_srvcli$ 
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli/py_srvcli$ code service_member_function.py 
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli/py_srvcli$ code client_member_function.py 
+elbek@elbek-virtual-machine:~$ ros2_ws/src/py_srvcli/py_srvcli$
+elbek@elbek-virtual-machine:~$ros2_ws/src/py_srvcli$ code package.xml 
+elbek@elbek-virtual-machine:~$/ros2_ws/src/py_srvcli$ 
 
-Muhammadyusuf@ubuntu:~/ros2_ws$ colcon build --packages-select py_srvcli
+elbek@elbek-virtual-machine:~$/ros2_ws$ colcon build --packages-select py_srvcli
 Starting >>> py_srvcli
 Finished <<< py_srvcli [2.52s]          
 
 Summary: 1 package finished [3.07s]
-Muhammadyusuf@ubuntu:~/ros2_ws$
+elbek@elbek-virtual-machine:~$/ros2_ws$
 
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 run py_srvcli service
+elbek@elbek-virtual-machine:~$ros2_ws$ ros2 run py_srvcli service
 [INFO] [1665459784.262448801] [minimal_service]: Incoming request
 a: 2 b: 3 c: 1
 
-Muhammadyusuf@ubuntu:~/ros2_ws$ ros2 run py_srvcli client 2 3 1
+elbek@elbek-virtual-machine:~$ros2_ws$ ros2 run py_srvcli client 2 3 1
 [INFO] [1665459784.296955573] [minimal_client_async]: Result of add_three_ints: for 2 + 3 + 1 = 6
-Muhammadyusuf@ubuntu:~/ros2_ws$ 
+elbek@elbek-virtual-machine:~$ros2_ws$ 
 
 ACTION. Terminal for Turtlesim
 
-Muhammadyusuf@Muhammadyusuf-virtual-machine:~$ # Replace ".bash" with your shell if you're not using bash
+elbek@elbek-virtual-machine:~$ # Replace ".bash" with your shell if you're not using bash
 # Possible values are: setup.bash, setup.sh, setup.zsh
 source /opt/ros/humble/setup.bash
-Muhammadyusuf@Muhammadyusuf-virtual-machine:~$ ros2 run turtlesim turtlesim_node
+elbek@elbek-virtual-machine:~$ ros2 run turtlesim turtlesim_node
 Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
 [INFO] [1664894097.902534336] [turtlesim]: Starting turtlesim with node name /turtlesim
 [INFO] [1664894097.929237142] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
@@ -490,3 +498,4 @@ to control
 ros2 topic pub  /turtlesim1/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 1.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.5}}"
 
 
+```
