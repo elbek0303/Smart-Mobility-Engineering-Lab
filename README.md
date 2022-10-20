@@ -256,7 +256,7 @@ destination directory: /home/Elbek/ros2_ws/src
 package format: 3
 version: 0.0.0
 description: TODO: Package description
-maintainer: ['Muhammadyusuf <kobuljon1979@gmail.com>']
+maintainer: ['Elbek<elbekjonyusupov0303@gmail.com>']
 licenses: ['TODO: License declaration']
 build type: ament_python
 dependencies: ['rclpy', 'example_interfaces']
