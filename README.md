@@ -159,11 +159,11 @@ PUBLISHER AND SUBSCRIBER IN PYTHON
 elbek@elbek-virtual-machine:~$ ros2_ws/src$ ros2 pkg create --build-type ament_python py_pubsub
 going to create a new package
 package name: py_pubsub
-destination directory: /home/asadbek/ros2_ws/src
+destination directory: /home/elbek/ros2_ws/src
 package format: 3
 version: 0.0.0
 description: TODO: Package description
-maintainer: ['Muhammadyusuf <kobuljon1979@gmail.com>']
+maintainer: ['Elbek <elbekjonyusupov0303@gmail.com>']
 licenses: ['TODO: License declaration']
 build type: ament_python
 dependencies: []
@@ -252,7 +252,7 @@ elbek@elbek-virtual-machine:~$ ros2_ws$ ros2 run py_pubsub listener
 elbek@elbek-virtual-machine:~$ ros2_ws/src$ ros2 pkg create --build-type ament_python py_srvcli --dependencies rclpy example_interfaces
 going to create a new package
 package name: py_srvcli
-destination directory: /home/Muhammadyusuf/ros2_ws/src
+destination directory: /home/Elbek/ros2_ws/src
 package format: 3
 version: 0.0.0
 description: TODO: Package description
@@ -350,7 +350,7 @@ destination directory: /home/elbek/ros2_ws/src
 package format: 3
 version: 0.0.0
 description: TODO: Package description
-maintainer: ['Muhammadyusuf <kobuljon1979@gmail.com>']
+maintainer: ['Elbek <kelbekjonyusupov@gmail.com>']
 licenses: ['TODO: License declaration']
 build type: ament_cmake
 dependencies: []
